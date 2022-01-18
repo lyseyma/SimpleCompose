@@ -35,7 +35,7 @@ fun setLaunchScreen(){
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = colorResource(id = R.color.teal_700)),
+            .background(color = colorResource(id = R.color.color_92A9BD)),
         verticalArrangement = Arrangement.Bottom,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

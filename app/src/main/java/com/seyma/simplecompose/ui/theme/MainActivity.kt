@@ -1,34 +1,23 @@
 package com.seyma.simplecompose.ui.theme
 
 import android.annotation.SuppressLint
-import android.app.Activity
-import android.app.Activity.RESULT_OK
-import android.content.ClipDescription
 import android.content.Intent
-import android.net.wifi.hotspot2.pps.Credential
 import android.os.Bundle
-import android.os.Message
-import android.provider.MediaStore.Images.ImageColumns.DESCRIPTION
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddCircle
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -39,7 +28,6 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.seyma.simplecompose.R
 import com.seyma.simplecompose.model.Profile
 import com.seyma.simplecompose.model.profiles
@@ -77,7 +65,7 @@ fun SetList(profileList: List<Profile>){
                         Icon(Icons.Filled.AddCircle, "backIcon")
                     }
                 },
-                backgroundColor = colorResource(id = R.color.teal_700),
+                backgroundColor = colorResource(id = R.color.color_92A9BD),
                 contentColor = Color.White,
                 elevation = 10.dp
             )
@@ -103,8 +91,9 @@ fun myProfile(name: String, description: String, imageRes: Int){
         getName = it.data!!.getStringExtra("NAME").toString()
         getDes = it.data!!.getStringExtra("DESCRIPTION").toString()
     }
-    Card(backgroundColor = colorResource(id = R.color.white),elevation = 10.dp,
+    Card(backgroundColor = colorResource(id = R.color.color_D3DEDC),
         modifier = Modifier
+            .clip(RoundedCornerShape(4.dp))
             .padding(all = 10.dp)
             .fillMaxWidth()
             .selectable(true, true, null, onClick = {
@@ -136,78 +125,7 @@ fun myProfile(name: String, description: String, imageRes: Int){
 
 }
 
-@ExperimentalAnimationApi
-@SuppressLint("ResourceType")
-@Composable
-fun Greeting(name: String) {
-    val context = LocalContext.current
-    Column {
-        Row {
-            Column {
-                Text(text = "Hello $name!" , modifier = Modifier.padding(6.dp))
-                Text(text = "It me !!!" , modifier = Modifier.padding(6.dp))
-            }
-            Column {
-                Text(text = "Hello $name!" , modifier = Modifier.padding(6.dp))
-                Text(text = "It me !!!" , modifier = Modifier.padding(6.dp))
-            }
 
-            Column {
-                Text(text = "Hello $name!" , modifier = Modifier.padding(6.dp))
-                Text(text = "It me !!!" , modifier = Modifier.padding(6.dp))
-            }
-
-        }
-        Row {
-            Column {
-                Button(onClick = { Toast.makeText(context, "Hello Hana",Toast.LENGTH_SHORT).show()
-                   context.startActivity(Intent(context, Home::class.java))
-                                 },modifier = Modifier.padding(6.dp) ,
-                    colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.teal_200)) ) {
-                    Text(text = "Click me" , color = Color.White)
-                }
-            }
-
-            Column {
-                Image(painter = painterResource(id = R.drawable.studiocompose) , contentDescription = "Android compose",
-                    modifier = Modifier
-                        .height(100.dp)
-                        .width(100.dp))
-            }
-            Column {
-                Image(painter = painterResource(id = R.drawable.img_1) , contentDescription = "Android compose" ,
-                    modifier = Modifier
-                        .height(100.dp)
-                        .width(100.dp))
-            }
-
-        }
-
-        Row {
-
-            Card(backgroundColor = colorResource(id = R.color.teal_700),elevation = 10.dp) {
-                var expended by remember {
-                    mutableStateOf(false)
-                }
-                Column(
-                    Modifier
-                        .clickable { expended = !expended }
-                        .height(200.dp)
-                        .width(200.dp),
-                    verticalArrangement = Arrangement.Center ,
-                    horizontalAlignment = Alignment.CenterHorizontally) {
-                    Image(painter = painterResource(id = R.drawable.img_1) , contentDescription = "Android compose" ,
-                        modifier = Modifier
-                            .height(100.dp)
-                            .width(100.dp))
-                    AnimatedVisibility(visible = expended) {
-                        Text(text = "JetPack Compose" , style = MaterialTheme.typography.h6 , color = Color.White)
-                    }
-                }
-            }
-        }
-    }
-}
 @ExperimentalAnimationApi
 @Preview(showBackground = true)
 @Composable
