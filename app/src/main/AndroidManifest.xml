@@ -11,6 +11,13 @@
         android:theme="@style/Theme.SimpleCompose">
         <activity
             android:name=".ui.theme.MainActivity"
+            >
+
+        </activity>
+        <activity android:name=".ui.theme.Home"/>
+        <activity android:name=".ui.theme.More"/>
+        <activity android:name=".ui.theme.AddProfile"/>
+        <activity android:name=".launcher.LauncherActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.SimpleCompose.NoActionBar">
@@ -20,9 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.theme.Home"/>
-        <activity android:name=".ui.theme.More"/>
-        <activity android:name=".ui.theme.AddProfile"/>
     </application>
 
 </manifest>
