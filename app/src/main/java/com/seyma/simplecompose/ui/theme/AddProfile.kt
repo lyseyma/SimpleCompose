@@ -30,6 +30,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.seyma.simplecompose.R
+import com.seyma.simplecompose.animation.InfiniteAnimation
 
 /**
  * @since 18.01.2022
@@ -44,7 +45,12 @@ class AddProfile: ComponentActivity() {
 
             SimpleComposeTheme {
                 Surface(color = MaterialTheme.colors.background) {
-                    WeightModifier()
+//                    AnimatableSample()
+//
+//                    AnimateDpAsState()
+//                    AnimateColorAsState()
+//                    TransitionAnimation()
+                    InfiniteAnimation()
                 }
             }
         }
