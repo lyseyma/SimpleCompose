@@ -35,7 +35,6 @@ import com.seyma.simplecompose.model.profiles
 
 class MainActivity : ComponentActivity() {
 
-    @ExperimentalAnimationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -124,6 +123,35 @@ fun myProfile(name: String, description: String, imageRes: Int){
         }
     }
 
+}
+
+@Immutable
+data class ColorSystem(
+    val color: Color ,
+    val gradient: List<Color>
+)
+
+val LocalColorSystem = staticCompositionLocalOf {
+    ColorSystem(
+        color = Color.Unspecified,
+        gradient = emptyList()
+    )
+}
+
+object Theme{
+    val colorSystem: ColorSystem
+    @Composable
+    get() = LocalColorSystem.current
+}
+
+@Composable
+private fun SimpleButton(){
+    Button(onClick = { /*TODO*/ },
+        enabled = true,
+
+    ) {
+
+    }
 }
 
 

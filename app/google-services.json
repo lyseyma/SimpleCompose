@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "225718212324",
+    "project_id": "simplecompose-99031",
+    "storage_bucket": "simplecompose-99031.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225718212324:android:485210300f5984878ffef1",
+        "android_client_info": {
+          "package_name": "com.seyma.simplecompose"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "225718212324-l2059ti75mqok82m00s1g5kqgjt1a625.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC9b9IvK6mADQJKiGJGqbYhYmEwJZMWfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "225718212324-l2059ti75mqok82m00s1g5kqgjt1a625.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

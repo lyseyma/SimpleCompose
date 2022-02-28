@@ -24,14 +24,13 @@ fun AnimatableSample(){
         mutableStateOf(false)
     }
     
-    var color = remember {
+    val color = remember {
         Animatable(Color.DarkGray)
     }
     // animate to green/red based on `button click`
     LaunchedEffect(isAnimated) {
         color.animateTo(if (isAnimated) Color.Green else Color.Red, animationSpec = tween(2000))
     }
-
 
     Box(modifier = Modifier
         .fillMaxWidth()

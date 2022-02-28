@@ -38,7 +38,6 @@ import com.seyma.simplecompose.animation.InfiniteAnimation
  */
 class AddProfile: ComponentActivity() {
 
-    @ExperimentalAnimationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
