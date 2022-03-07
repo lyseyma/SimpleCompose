@@ -18,6 +18,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddCircle
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -62,7 +63,7 @@ fun SetList(profileList: List<Profile>){
                     IconButton(onClick = {
                         val intent = Intent(context, AddProfile::class.java)
                         context.startActivity(intent)}) {
-                        Icon(Icons.Filled.AddCircle, "backIcon")
+                        Icon(Icons.Filled.ArrowBack, "backIcon")
                     }
                 },
                 backgroundColor = colorResource(id = R.color.color_92A9BD),
@@ -76,7 +77,16 @@ fun SetList(profileList: List<Profile>){
                         myProfile(name = profile.name.plus(" $i"), description = profile.description, imageRes = profile.imageRes)
                 }
             }
-        })
+        },
+        isFloatingActionButtonDocked = true,
+        floatingActionButtonPosition = FabPosition.End,
+        floatingActionButton = {
+            FloatingActionButton(onClick = { /*TODO*/ }, backgroundColor = colorResource(id = R.color.color_92A9BD),contentColor = Color.White) {
+                Icon(Icons.Filled.AddCircle, "backIcon")
+
+            }
+        }
+    )
 
 }
 

@@ -30,7 +30,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.seyma.simplecompose.R
-import com.seyma.simplecompose.animation.InfiniteAnimation
+import com.seyma.simplecompose.animation.TransitionAnimation
 
 /**
  * @since 18.01.2022
@@ -48,15 +48,15 @@ class AddProfile: ComponentActivity() {
 //
 //                    AnimateDpAsState()
 //                    AnimateColorAsState()
-//                    TransitionAnimation()
-                    InfiniteAnimation()
+                    TransitionAnimation()
+//                    InfiniteAnimation()
                 }
             }
         }
     }
 }
 @ExperimentalAnimationApi
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES , showBackground = true , name = "Dark Mode")
+//@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES , showBackground = true , name = "Dark Mode")
 @Composable
 fun WeightModifier(){
     val activity = (LocalContext.current as? Activity)
@@ -186,9 +186,8 @@ fun Greeting(name: String) {
     }
 }
 
-@ExperimentalAnimationApi
-@Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES , showBackground = true , name = "Dark Mode")
 @Composable
 fun getWeigh(){
-    WeightModifier()
+    TransitionAnimation()
 }
